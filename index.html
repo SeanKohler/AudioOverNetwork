@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Welcome to AON (Audio Over Network)</h1>
+</head>
+<body>
+    <form onsubmit="send()">
+        <input type="text" id="input" required/>
+        <input type="submit" id="mybtn" name="Send">
+    </form>
+    <h2>You may have to try multilpe times :/ sorry im not a paid service</h2>
+    <!--<script type="text/javascript">var input= "<?= $input ?>";</script>
+    <script type="text/javascript" scr="./work.js"></script> -->
+    <script>
+        function send(){
+            var input=document.forms[0].elements[0].value;
+
+            var data = {input}
+            var options ={
+                method: "POST",
+                headers:{
+                    'Content-Type': 'application/json',
+                    'cache-control': 'no-cache'
+                },
+                body: JSON.stringify(data)
+            }
+            fetch("/index.html",options)
+            
+            document.write("Submit: "+input)
+        }
+    </script>
+</body>
+</html>
